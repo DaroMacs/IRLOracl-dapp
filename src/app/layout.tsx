@@ -1,16 +1,58 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import {
+  Epilogue,
+  Inter,
+  Noto_Sans,
+  Open_Sans,
+  Poppins,
+  Roboto,
+  Work_Sans,
+} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 
-// // Configure Montserrat font
-// const montserrat = Montserrat({
-//   subsets: ["latin"],
-//   display: "swap",
-//   variable: "--font-montserrat", // Optional: for CSS variable usage
-//   // If you want specific weights, add them like this:
-//   // weight: ['400', '500', '700'],
-// });
+// Configure all fonts with light weight (300)
+const roboto = Roboto({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-roboto",
+});
+
+const openSans = Open_Sans({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-open-sans",
+});
+
+const poppins = Poppins({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+});
+
+const notoSans = Noto_Sans({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-noto-sans",
+});
+
+const workSans = Work_Sans({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-work-sans",
+});
+
+const epilogue = Epilogue({
+  weight: ["300"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-epilogue",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,7 +68,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={
+          // Select ONE of these options by uncommenting:
+          // roboto.className
+          // openSans.className
+          // poppins.className
+          // notoSans.className
+          workSans.className
+          // epilogue.className
+        }
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
