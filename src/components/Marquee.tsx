@@ -31,7 +31,7 @@ const Clients = () => {
           />
         </div>
 
-        <h1 className="heading py-20">
+        <h1 className="heading py-10">
           <span
             style={{
               background: "linear-gradient(90deg, #446dcd, #4bb6d3, #6ef2cc)",

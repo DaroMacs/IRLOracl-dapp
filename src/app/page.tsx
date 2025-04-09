@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <Grid />
         <Marquee />
+        <Footer />
       </div>
     </main>
   );
