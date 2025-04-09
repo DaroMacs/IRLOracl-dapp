@@ -68,3 +68,32 @@ export const gridItems = [
     spareImg: "",
   },
 ];
+
+export const technologies = [
+  {
+    img: "/solidity.png",
+  },
+  {
+    img: "/mantle.svg",
+  },
+
+  {
+    img: "/ethereum.svg",
+  },
+  {
+    img: "/OpenZeppelin.svg",
+  },
+];
+
+export const supporters = [
+  {
+    id: 1,
+    name: "mantle",
+    img: "/mantle.svg",
+  },
+  {
+    id: 2,
+    name: "odisea",
+    img: "/odisea.png",
+  },
+];

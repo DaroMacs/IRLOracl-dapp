@@ -1,5 +1,6 @@
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         />
         <Hero />
         <Grid />
+        <Marquee />
       </div>
     </main>
   );
