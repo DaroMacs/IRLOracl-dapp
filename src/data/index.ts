@@ -88,12 +88,12 @@ export const technologies = [
 export const supporters = [
   {
     id: 1,
-    name: "mantle",
-    img: "/mantle.svg",
+    name: "odisea",
+    img: "/odisea.png",
   },
   {
     id: 2,
-    name: "odisea",
-    img: "/odisea.png",
+    name: "mantle",
+    img: "/mantle.svg",
   },
 ];
