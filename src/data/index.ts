@@ -8,17 +8,17 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "Better payments, fostering open communication ",
+    title: "Reliable and fast payments, transparent and secure",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "/b1.svg",
+    img: "/water-droplet.png",
     spareImg: "",
   },
   {
     id: 2,
-    title: "Flexible time zone communications",
+    title: "Pay vital services with ease. Anywhere",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -28,8 +28,8 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "Seamless payments, fostering open communication",
-    description: "I constantly try to improve",
+    title: "Powered by Mantle",
+    description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -38,7 +38,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Customer-focused payments, fostering open communication.",
+    title: "Customer-focused payments, fostering open communication",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -49,8 +49,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Payment processing inside scoop",
-    description: "The Inside Scoop",
+    title: "Verified data, always transparent",
+    description: "Support 24/7",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -59,7 +59,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "Do you want to make a payment?",
+    title: "Manage your services",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",

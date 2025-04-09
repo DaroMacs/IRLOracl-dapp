@@ -40,12 +40,14 @@ export const TextGenerateEffect = ({
               key={word + idx}
               className={"dark:text-white text-black opacity-0"}
               style={{
-                ...(idx > 5 && {
-                  background:
-                    "linear-gradient(90deg, #446dcd, #4bb6d3, #6ef2cc)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }),
+                ...(idx === 7 || idx === 2
+                  ? {
+                      background:
+                        "linear-gradient(90deg, #446dcd, #4bb6d3, #6ef2cc)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }
+                  : {}),
                 filter: filter ? "blur(10px)" : "none",
               }}
             >
