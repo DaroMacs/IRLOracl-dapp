@@ -2,6 +2,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
 import { BackgroundGradientAnimation } from "./GradientBg";
@@ -59,10 +60,9 @@ export const BentoGridItem = ({
     },
   };
 
-  const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
+  const router = useRouter();
+  const navigateToDashboard = () => {
+    router.push("/dashboard");
   };
 
   return (
@@ -169,7 +169,7 @@ export const BentoGridItem = ({
                 title={"Go to Dashboard"}
                 icon={<GoArrowUpRight />}
                 position="right"
-                handleClick={handleCopy}
+                handleClick={navigateToDashboard}
                 otherClasses="!bg-[#161A31]"
               />
             </div>
