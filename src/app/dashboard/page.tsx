@@ -1,9 +1,9 @@
-import { SidebarDemo } from "@/components/ui/SidebarDemo";
+import { Dashboard as DashboardBody } from "@/components/Dashboard";
 
 export default function Dashboard() {
   return (
     <main className="relative bg-black-100 flex items-center justify-center flex-col overflow-hidden  ">
-      <SidebarDemo />
+      <DashboardBody />
     </main>
   );
 }

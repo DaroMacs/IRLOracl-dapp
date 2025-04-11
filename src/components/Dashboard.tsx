@@ -11,9 +11,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Sidebar, SidebarBody, SidebarLink } from "../../components/ui/Sidebar";
+import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
 
-export function SidebarDemo() {
+export function Dashboard() {
   const links = [
     {
       label: "Dashboard",
@@ -81,7 +81,7 @@ export function SidebarDemo() {
           </div>
         </SidebarBody>
       </Sidebar>
-      <Dashboard />
+      <DashboardContent />
     </div>
   );
 }
@@ -125,7 +125,7 @@ export const LogoIcon = () => {
 };
 
 // Dummy dashboard component with content
-const Dashboard = () => {
+const DashboardContent = () => {
   return (
     <div className="flex flex-1">
       <div className="flex w-full h-screen flex-1 flex-col gap-2  bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-black-100">
