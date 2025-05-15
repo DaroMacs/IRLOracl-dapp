@@ -1,9 +1,17 @@
-import { FaLocationArrow } from "react-icons/fa";
+"use client";
+import { usePrivy } from "@privy-io/react-auth";
+import { useRouter } from "next/navigation";
+
+import { GoArrowUpRight } from "react-icons/go";
+import ConnectWallet from "./ui/ConnectWallet";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
+  const { authenticated } = usePrivy();
+  const router = useRouter();
+
   return (
     <div className="pt-24">
       <div>
@@ -32,13 +40,17 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl mb-8"
           />
 
-          <a href="#about">
+          {!authenticated ? (
+            <ConnectWallet />
+          ) : (
             <MagicButton
-              title="Connect"
-              icon={<FaLocationArrow />}
+              title={"Go to Dashboard"}
+              icon={<GoArrowUpRight />}
               position="right"
+              handleClick={() => router.push("/dashboard")}
+              otherClasses="!bg-[#161A31]"
             />
-          </a>
+          )}
         </div>
       </div>
     </div>

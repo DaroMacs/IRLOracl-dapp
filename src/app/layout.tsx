@@ -1,3 +1,4 @@
+import RootProvider from "@/providers/RootProvider";
 import type { Metadata } from "next";
 import {
   Epilogue,
@@ -84,14 +85,16 @@ export default function RootLayout({
           // epilogue.className
         }
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <RootProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </RootProvider>
       </body>
     </html>
   );
