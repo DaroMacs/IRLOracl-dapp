@@ -8,7 +8,7 @@ export const navItems = [
 export const gridItems = [
   {
     id: 1,
-    title: "Reliable and fast payments, transparent and secure",
+    title: "Reliable physical data, transparent and secure",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Pay vital services with ease. Anywhere",
+    title: "Use the data anywhere",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -38,7 +38,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Customer-focused payments, fostering open communication",
+    title: "Providing valuable data to B2B and B2C",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
