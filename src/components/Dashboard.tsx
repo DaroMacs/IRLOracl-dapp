@@ -10,21 +10,39 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Card } from "./Dashboard/components/Card";
 import ConnectWallet from "./ui/ConnectWallet";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
 
 export function Dashboard() {
-  const { authenticated } = usePrivy();
+  const { authenticated, ready, logout } = usePrivy();
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (!authenticated) {
-      window.location.href = "/";
+    if (ready) {
+      setIsLoading(false);
+      if (!authenticated) {
+        router.push("/");
+      }
     }
-  }, [authenticated]);
+  }, [authenticated, ready, router]);
 
-  const { logout } = usePrivy();
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-blue-500"></div>
+      </div>
+    );
+  }
+
+  if (!authenticated) {
+    return null;
+  }
+
   const links = [
     {
       label: "Dashboard",
@@ -56,7 +74,7 @@ export function Dashboard() {
       onClick: () => logout(),
     },
   ];
-  const [open, setOpen] = useState(false);
+
   return (
     <div
       className={cn(

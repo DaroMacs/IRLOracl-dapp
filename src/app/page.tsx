@@ -15,14 +15,14 @@ export default function Home() {
 
   useEffect(() => {
     if (authenticated && typeof window !== "undefined") {
-      const hasRedirected = sessionStorage.getItem("hasRedirected");
+      const hasVisitedBefore = sessionStorage.getItem("hasVisitedBefore");
 
-      if (!hasRedirected) {
-        sessionStorage.setItem("hasRedirected", "true");
+      if (!hasVisitedBefore) {
+        sessionStorage.setItem("hasVisitedBefore", "true");
         router.push("/dashboard");
       }
     }
-  }, [authenticated]);
+  }, [authenticated, router]);
 
   return (
     <main className="relative bg-black-100 flex items-center justify-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
