@@ -3,7 +3,6 @@ import { usePrivy } from "@privy-io/react-auth";
 import { useRouter } from "next/navigation";
 
 import { GoArrowUpRight } from "react-icons/go";
-import ConnectWallet from "./ui/ConnectWallet";
 import MagicButton from "./ui/MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
@@ -40,9 +39,7 @@ const Hero = () => {
             className="text-center text-[40px] md:text-5xl lg:text-6xl mb-8"
           />
 
-          {!authenticated ? (
-            <ConnectWallet />
-          ) : (
+          {authenticated && (
             <MagicButton
               title={"Go to Dashboard"}
               icon={<GoArrowUpRight />}

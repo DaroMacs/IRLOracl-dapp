@@ -2,13 +2,14 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { usePrivy } from "@privy-io/react-auth";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
+import ConnectWallet from "./ConnectWallet";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
 import MagicButton from "./MagicButton";
-
 export const BentoGrid = ({
   className,
   children,
@@ -47,6 +48,7 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
+  const { authenticated } = usePrivy();
   const leftLists = ["Reliable", "Fast", "Transparent"];
   const rightLists = ["Secure", "Effective", "Efficient"];
 
@@ -165,13 +167,17 @@ export const BentoGridItem = ({
                 }`}
               ></div>
 
-              <MagicButton
-                title={"Go to Dashboard"}
-                icon={<GoArrowUpRight />}
-                position="right"
-                handleClick={navigateToDashboard}
-                otherClasses="!bg-[#161A31]"
-              />
+              {!authenticated ? (
+                <ConnectWallet />
+              ) : (
+                <MagicButton
+                  title={"Go to Dashboard"}
+                  icon={<GoArrowUpRight />}
+                  position="right"
+                  handleClick={() => router.push("/dashboard")}
+                  otherClasses="!bg-[#161A31]"
+                />
+              )}
             </div>
           )}
         </div>
