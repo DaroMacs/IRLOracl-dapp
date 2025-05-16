@@ -9,9 +9,9 @@ import {
   IconUserBolt,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { Card } from "./Dashboard/components/Card";
 import ConnectWallet from "./ui/ConnectWallet";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
 
@@ -64,23 +64,6 @@ export function Dashboard() {
               ))}
             </div>
           </div>
-          <div>
-            <SidebarLink
-              link={{
-                label: "Manu Arora",
-                href: "#",
-                icon: (
-                  <Image
-                    src="/mantle.svg"
-                    className="h-7 w-7 shrink-0 rounded-full"
-                    width={50}
-                    height={50}
-                    alt="Avatar"
-                  />
-                ),
-              }}
-            />
-          </div>
         </SidebarBody>
       </Sidebar>
       <DashboardContent />
@@ -123,17 +106,14 @@ const DashboardContent = () => {
   const { authenticated } = usePrivy();
   return (
     <div className="flex flex-1">
-      <div className="flex w-full h-screen flex-1 flex-col gap-2  bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-black-100">
+      <div className="flex w-full flex-1 flex-col gap-2  bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-black-100">
         <div className="flex justify-end">
           <ConnectWallet />
         </div>
-        <div className="flex gap-2">
-          {[...new Array(2)].map((i, idx) => (
-            <div
-              key={"first-array-demo-1" + idx}
-              className="h-20 w-full  rounded-lg bg-gray-100 dark:bg-neutral-800"
-            >
-              test {idx}
+        <div className="grid grid-cols-1  gap-4">
+          {[...new Array(12)].map((i, idx) => (
+            <div key={idx} className="w-full">
+              <Card />
             </div>
           ))}
         </div>
