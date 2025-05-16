@@ -27,6 +27,9 @@ export function Dashboard() {
       setIsLoading(false);
       if (!authenticated) {
         router.push("/");
+      } else {
+        // Set the flag when user successfully accesses dashboard
+        sessionStorage.setItem("hasVisitedBefore", "true");
       }
     }
   }, [authenticated, ready, router]);
@@ -71,7 +74,10 @@ export function Dashboard() {
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
-      onClick: () => logout(),
+      onClick: () => {
+        sessionStorage.removeItem("hasVisitedBefore");
+        logout();
+      },
     },
   ];
 

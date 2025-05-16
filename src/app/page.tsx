@@ -10,19 +10,20 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Home() {
-  const { authenticated } = usePrivy();
+  const { authenticated, ready } = usePrivy();
   const router = useRouter();
 
   useEffect(() => {
-    if (authenticated && typeof window !== "undefined") {
+    if (ready && authenticated && typeof window !== "undefined") {
       const hasVisitedBefore = sessionStorage.getItem("hasVisitedBefore");
 
+      console.log("Has visited before:", hasVisitedBefore);
+
       if (!hasVisitedBefore) {
-        sessionStorage.setItem("hasVisitedBefore", "true");
         router.push("/dashboard");
       }
     }
-  }, [authenticated, router]);
+  }, [authenticated, ready, router]);
 
   return (
     <main className="relative bg-black-100 flex items-center justify-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
