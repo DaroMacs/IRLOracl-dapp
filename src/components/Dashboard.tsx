@@ -10,12 +10,21 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "./Dashboard/components/Card";
 import ConnectWallet from "./ui/ConnectWallet";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
 
 export function Dashboard() {
+  const { authenticated } = usePrivy();
+
+  useEffect(() => {
+    if (!authenticated) {
+      window.location.href = "/";
+    }
+  }, [authenticated]);
+
+  const { logout } = usePrivy();
   const links = [
     {
       label: "Dashboard",
@@ -44,6 +53,7 @@ export function Dashboard() {
       icon: (
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
+      onClick: () => logout(),
     },
   ];
   const [open, setOpen] = useState(false);
@@ -107,9 +117,22 @@ const DashboardContent = () => {
   return (
     <div className="flex flex-1">
       <div className="flex w-full flex-1 flex-col gap-2  bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-black-100">
-        <div className="flex justify-end">
+        <div className="flex justify-between items-center">
+          <span
+            className="text-4xl font-bold"
+            style={{
+              background: "linear-gradient(90deg, #446dcd, #4bb6d3, #6ef2cc)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            My devices
+          </span>
           <ConnectWallet />
         </div>
+        <p className="text-slate-200 pb-5">
+          Control and manage your devices from here.
+        </p>
         <div className="grid grid-cols-1  gap-4">
           {[...new Array(12)].map((i, idx) => (
             <div key={idx} className="w-full">
