@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { cn } from "@/lib/utils";
+import { usePrivy } from "@privy-io/react-auth";
 import {
   IconArrowLeft,
   IconBrandTabler,
@@ -11,6 +12,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import ConnectWallet from "./ui/ConnectWallet";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
 
 export function Dashboard() {
@@ -118,9 +120,13 @@ export const LogoIcon = () => {
 
 // Dummy dashboard component with content
 const DashboardContent = () => {
+  const { authenticated } = usePrivy();
   return (
     <div className="flex flex-1">
       <div className="flex w-full h-screen flex-1 flex-col gap-2  bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-black-100">
+        <div className="flex justify-end">
+          <ConnectWallet />
+        </div>
         <div className="flex gap-2">
           {[...new Array(2)].map((i, idx) => (
             <div
