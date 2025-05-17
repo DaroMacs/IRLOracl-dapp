@@ -1,5 +1,6 @@
 import { CardSpotlight } from "@/components/ui/CardSpotlight";
 import { BlockchainStatus } from "./components/BlockchainStatus";
+import { ConsumptionChart } from "./components/ConsumptionChart";
 import { StatusIndicator } from "./components/StatusIndicator";
 
 export function Card() {
@@ -11,23 +12,23 @@ export function Card() {
   };
 
   return (
-    <CardSpotlight className="h-fit w-full">
-      <div className="text-white text-2xl relative z-20 font-sans mb-9 flex justify-between items-center">
+    <CardSpotlight className="min-h-[400px] w-full p-6">
+      <div className="text-white text-2xl relative z-20 font-sans mb-6 flex justify-between items-center">
         <div>
           <span className="font-[400]">IoT Device: </span>
           <span className="font-[600]">Water Flow Monitor</span>
         </div>
         <StatusIndicator isConnected={isConnected} useSimpleText={true} />
       </div>
-      <div className="flex justify-between items-stretch relative z-20">
-        <div className="flex gap-10 items-stretch">
+      <div className="flex justify-start gap-4 items-stretch relative z-20 h-[320px]">
+        <div className="flex gap-4 items-stretch flex-1 min-w-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://images.unsplash.com/photo-1605387132052-357a341cc515?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="h-auto w-52 rounded-xl group-hover/card:shadow-xl"
+            className="h-[320px] w-[320px] shrink-0 object-cover rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
-          <div className="flex flex-col items-center gap-5">
+          <div className="flex flex-col items-center gap-4 w-full">
             <BlockchainStatus {...blockchainStatus} />
             <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full w-full bg-emerald-400/10 backdrop-blur-sm">
               <span>Disconnect</span>
@@ -36,9 +37,16 @@ export function Card() {
           </div>
         </div>
 
-        <div className="flex gap-10 items-start">
-          <div>graphic</div>
-          <div>latest txs</div>
+        <div className="flex gap-6 flex-1 min-w-0">
+          <div className="flex-1 min-w-0 h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
+            <ConsumptionChart />
+          </div>
+          <div className="w-[300px] shrink-0 h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-white text-lg font-medium mb-4">
+              Latest Transactions
+            </div>
+            <div className="text-white/60 text-sm">No transactions yet</div>
+          </div>
         </div>
       </div>
     </CardSpotlight>

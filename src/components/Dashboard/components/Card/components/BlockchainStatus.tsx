@@ -12,7 +12,7 @@ export function BlockchainStatus({
   blockNumber,
 }: BlockchainStatusProps) {
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 space-y-3">
+    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 space-y-3 w-full">
       <div className="flex items-center gap-2">
         <span className="text-white text-lg font-medium">
           Blockchain Status
