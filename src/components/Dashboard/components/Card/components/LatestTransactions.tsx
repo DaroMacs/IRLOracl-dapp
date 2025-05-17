@@ -11,7 +11,7 @@ interface LatestTransactionsProps {
 
 export function LatestTransactions({ transactions }: LatestTransactionsProps) {
   return (
-    <div className="h-[320px] w-full bg-white/5 backdrop-blur-sm rounded-lg p-4">
+    <div className="h-[320px] w-full bg-white/5 backdrop-blur-sm rounded-2xl p-4">
       <div className="text-white text-lg font-medium mb-4">
         Latest Transactions
       </div>

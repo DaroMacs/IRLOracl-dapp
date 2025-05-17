@@ -14,7 +14,7 @@ export function BlockchainStatus({
   const contractAddress = "0x1234...5678"; // This should come from your actual contract
 
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 space-y-3 w-full">
+    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 space-y-3 w-full">
       <div className="flex items-center gap-2">
         <span className="text-white text-lg font-medium">
           Blockchain Status

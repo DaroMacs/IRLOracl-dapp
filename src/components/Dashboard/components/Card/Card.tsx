@@ -56,7 +56,7 @@ export function Card() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://images.unsplash.com/photo-1605387132052-357a341cc515?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="h-[320px] w-[320px] object-cover rounded-xl group-hover/card:shadow-xl"
+            className="h-[320px] w-[320px] object-cover rounded-2xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
           <div className="flex gap-4 flex-1">
@@ -74,10 +74,10 @@ export function Card() {
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
+          <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-2xl p-4">
             <ConsumptionChart />
           </div>
-          <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
+          <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-2xl p-4">
             <TransactionChart />
           </div>
         </div>
