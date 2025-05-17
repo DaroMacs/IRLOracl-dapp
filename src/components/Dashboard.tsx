@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Card } from "./Dashboard/components/Card";
+import { Card } from "./Dashboard/components/Card/Card";
 import ConnectWallet from "./ui/ConnectWallet";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/Sidebar";
 
