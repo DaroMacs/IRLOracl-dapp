@@ -20,15 +20,24 @@ export function Card() {
         </div>
         <StatusIndicator isConnected={isConnected} useSimpleText={true} />
       </div>
-      <div className="flex justify-start gap-4 items-stretch relative z-20 h-[320px]">
-        <div className="flex gap-4 items-stretch flex-1 min-w-0">
+      <div className="flex flex-col gap-4 relative z-20">
+        <div className="flex gap-4 items-stretch">
+          {/* <div className="flex gap-4 items-stretch flex-1 min-w-[320px]"> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://images.unsplash.com/photo-1605387132052-357a341cc515?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="h-[320px] w-[320px] shrink-0 object-cover rounded-xl group-hover/card:shadow-xl"
+            className="h-[320px] w-[320px] object-cover rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
-          <div className="flex flex-col items-center gap-4 w-full">
+          <div className="h-[320px] w-full bg-white/5 backdrop-blur-sm rounded-lg p-4">
+            <div className="text-white text-lg font-medium mb-4">
+              Latest Transactions
+            </div>
+            <div className="text-white/60 text-sm">No transactions yet</div>
+          </div>
+          {/* </div> */}
+
+          <div className="flex flex-col items-center gap-4 flex-1">
             <BlockchainStatus {...blockchainStatus} />
             <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full w-full bg-emerald-400/10 backdrop-blur-sm">
               <span>Disconnect</span>
@@ -37,16 +46,8 @@ export function Card() {
           </div>
         </div>
 
-        <div className="flex gap-6 flex-1 min-w-0">
-          <div className="flex-1 min-w-0 h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
-            <ConsumptionChart />
-          </div>
-          <div className="w-[300px] shrink-0 h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-white text-lg font-medium mb-4">
-              Latest Transactions
-            </div>
-            <div className="text-white/60 text-sm">No transactions yet</div>
-          </div>
+        <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
+          <ConsumptionChart />
         </div>
       </div>
     </CardSpotlight>
