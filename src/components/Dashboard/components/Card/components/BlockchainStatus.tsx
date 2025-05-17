@@ -31,7 +31,7 @@ export function BlockchainStatus({
             href={`https://etherscan.io/address/${contractAddress}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 text-sm hover:text-blue-300 transition-colors duration-200 flex items-center gap-1"
+            className="text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center gap-1"
           >
             {contractAddress}
             <svg
