@@ -143,7 +143,7 @@ const DashboardContent = () => {
       <div className="flex w-full flex-1 flex-col gap-2  bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-black-100">
         <div className="flex justify-between items-center">
           <span
-            className="text-4xl font-bold"
+            className="text-5xl font-bold pb-1"
             style={{
               background: "linear-gradient(90deg, #446dcd, #4bb6d3, #6ef2cc)",
               WebkitBackgroundClip: "text",
@@ -154,7 +154,7 @@ const DashboardContent = () => {
           </span>
           <ConnectWallet />
         </div>
-        <p className="text-slate-200 pb-5">
+        <p className="text-slate-200 text-xl pb-5">
           Control and manage your devices from here.
         </p>
         <div className="grid grid-cols-1  gap-4">

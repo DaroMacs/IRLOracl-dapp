@@ -12,52 +12,46 @@ import {
 } from "recharts";
 
 interface DataPoint {
-  day: string;
+  time: string;
   value: number;
 }
 
 // Sample data for different time periods
+const hourData: DataPoint[] = [
+  { time: "00:00", value: 40 },
+  { time: "04:00", value: 35 },
+  { time: "08:00", value: 55 },
+  { time: "12:00", value: 65 },
+  { time: "16:00", value: 58 },
+  { time: "20:00", value: 45 },
+];
+
+const dayData: DataPoint[] = [
+  { time: "Mon", value: 320 },
+  { time: "Tue", value: 350 },
+  { time: "Wed", value: 380 },
+  { time: "Thu", value: 340 },
+  { time: "Fri", value: 360 },
+  { time: "Sat", value: 400 },
+  { time: "Sun", value: 330 },
+];
+
 const weekData: DataPoint[] = [
-  { day: "Mon", value: 40 },
-  { day: "Tue", value: 30 },
-  { day: "Wed", value: 45 },
-  { day: "Thu", value: 50 },
-  { day: "Fri", value: 35 },
-  { day: "Sat", value: 65 },
-  { day: "Sun", value: 38 },
+  { time: "Week 1", value: 1850 },
+  { time: "Week 2", value: 1920 },
+  { time: "Week 3", value: 1780 },
+  { time: "Week 4", value: 1890 },
 ];
 
-const monthData: DataPoint[] = [
-  { day: "Week 1", value: 280 },
-  { day: "Week 2", value: 250 },
-  { day: "Week 3", value: 310 },
-  { day: "Week 4", value: 290 },
-];
-
-const yearData: DataPoint[] = [
-  { day: "Jan", value: 1200 },
-  { day: "Feb", value: 940 },
-  { day: "Mar", value: 1100 },
-  { day: "Apr", value: 1300 },
-  { day: "May", value: 900 },
-  { day: "Jun", value: 1200 },
-  { day: "Jul", value: 1500 },
-  { day: "Aug", value: 1300 },
-  { day: "Sep", value: 1100 },
-  { day: "Oct", value: 1000 },
-  { day: "Nov", value: 1100 },
-  { day: "Dec", value: 1284 },
-];
-
-type TimeRange = "week" | "month" | "year";
+type TimeRange = "hour" | "day" | "week";
 
 export function ConsumptionChart() {
-  const [timeRange, setTimeRange] = useState<TimeRange>("week");
+  const [timeRange, setTimeRange] = useState<TimeRange>("hour");
 
   const data = {
+    hour: hourData,
+    day: dayData,
     week: weekData,
-    month: monthData,
-    year: yearData,
   }[timeRange];
 
   return (
@@ -65,7 +59,7 @@ export function ConsumptionChart() {
       <div className="flex justify-between items-center mb-4">
         <h3 className="text-white text-lg font-medium">Consumption</h3>
         <div className="flex gap-2">
-          {(["week", "month", "year"] as const).map((range) => (
+          {(["hour", "day", "week"] as const).map((range) => (
             <button
               key={range}
               onClick={() => setTimeRange(range)}
@@ -98,7 +92,7 @@ export function ConsumptionChart() {
               vertical={false}
             />
             <XAxis
-              dataKey="day"
+              dataKey="time"
               stroke="rgba(255,255,255,0.5)"
               fontSize={12}
               tickLine={false}
