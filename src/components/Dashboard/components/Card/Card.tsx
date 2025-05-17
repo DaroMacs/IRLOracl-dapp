@@ -2,6 +2,7 @@ import { CardSpotlight } from "@/components/ui/CardSpotlight";
 import { BlockchainStatus } from "./components/BlockchainStatus";
 import { ConsumptionChart } from "./components/ConsumptionChart";
 import { StatusIndicator } from "./components/StatusIndicator";
+import { TransactionChart } from "./components/TransactionChart";
 
 export function Card() {
   const isConnected = true; // This should come from your actual device status
@@ -46,8 +47,13 @@ export function Card() {
           </div>
         </div>
 
-        <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
-          <ConsumptionChart />
+        <div className="grid grid-cols-2 gap-4">
+          <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
+            <ConsumptionChart />
+          </div>
+          <div className="w-full h-[320px] bg-white/5 backdrop-blur-sm rounded-lg p-4">
+            <TransactionChart />
+          </div>
         </div>
       </div>
     </CardSpotlight>
