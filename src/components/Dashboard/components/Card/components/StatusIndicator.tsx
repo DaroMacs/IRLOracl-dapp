@@ -30,10 +30,10 @@ export function StatusIndicator({
       >
         {isConnected
           ? useSimpleText
-            ? "ON"
+            ? "Online"
             : "Connected"
           : useSimpleText
-          ? "OFF"
+          ? "Offline"
           : "Disconnected"}
       </span>
     </span>

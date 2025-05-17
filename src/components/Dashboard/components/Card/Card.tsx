@@ -1,7 +1,9 @@
 import { CardSpotlight } from "@/components/ui/CardSpotlight";
 import { BlockchainStatus } from "./components/BlockchainStatus";
 import { ConsumptionChart } from "./components/ConsumptionChart";
+import { LatestTransactions } from "./components/LatestTransactions";
 import { StatusIndicator } from "./components/StatusIndicator";
+import { TokenRewards } from "./components/TokenRewards";
 import { TransactionChart } from "./components/TransactionChart";
 
 export function Card() {
@@ -11,6 +13,34 @@ export function Card() {
     lastSync: "2 min ago",
     blockNumber: 18732091,
   };
+
+  const transactions = [
+    {
+      type: "water-usage" as const,
+      timestamp: "Today, 10:45 AM",
+      hash: "0x7c2...b9a4",
+      value: "12.3 L",
+    },
+    {
+      type: "token-reward" as const,
+      timestamp: "Today, 9:30 AM",
+      hash: "0x3f1...72c6",
+      value: "+2.1 WTR",
+    },
+  ];
+
+  const rewards = [
+    {
+      timestamp: "Today, 9:30 AM",
+      hash: "0x3f1...72c6",
+      value: "+2.1 WTR",
+    },
+    {
+      timestamp: "Today, 8:15 AM",
+      hash: "0x5d2...e8b3",
+      value: "+1.5 WTR",
+    },
+  ];
 
   return (
     <CardSpotlight className="min-h-[400px] w-full p-6">
@@ -23,20 +53,16 @@ export function Card() {
       </div>
       <div className="flex flex-col gap-4 relative z-20">
         <div className="flex gap-4 items-stretch">
-          {/* <div className="flex gap-4 items-stretch flex-1 min-w-[320px]"> */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://images.unsplash.com/photo-1605387132052-357a341cc515?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             className="h-[320px] w-[320px] object-cover rounded-xl group-hover/card:shadow-xl"
             alt="thumbnail"
           />
-          <div className="h-[320px] w-full bg-white/5 backdrop-blur-sm rounded-lg p-4">
-            <div className="text-white text-lg font-medium mb-4">
-              Latest Transactions
-            </div>
-            <div className="text-white/60 text-sm">No transactions yet</div>
+          <div className="flex gap-4 flex-1">
+            <LatestTransactions transactions={transactions} />
+            <TokenRewards rewards={rewards} />
           </div>
-          {/* </div> */}
 
           <div className="flex flex-col items-center gap-4 flex-1">
             <BlockchainStatus {...blockchainStatus} />
