@@ -125,7 +125,7 @@ export const Logo = () => {
         animate={{ opacity: 1 }}
         className="font-medium whitespace-pre text-black dark:text-white"
       >
-        RealOracles
+        IRLOracles
       </motion.span>
     </Link>
   );
@@ -151,10 +151,7 @@ const DashboardContent = () => {
       if (authenticated && user?.wallet?.address) {
         try {
           setLoading(true);
-          const [devicesData] = await Promise.all([
-            getAllDevices(),
-            toggleDeviceStatus("Device1"),
-          ]);
+          const [devicesData] = await Promise.all([getAllDevices()]);
 
           setDevices(devicesData);
         } catch (error) {
@@ -192,7 +189,11 @@ const DashboardContent = () => {
         <div className="grid grid-cols-1  gap-4">
           {devices?.map((device, i) => (
             <div key={i} className="w-full">
-              <Card index={i} toggleDeviceStatus={toggleDeviceStatus} />
+              <Card
+                index={i}
+                toggleDeviceStatus={toggleDeviceStatus}
+                device={device}
+              />
             </div>
           ))}
         </div>

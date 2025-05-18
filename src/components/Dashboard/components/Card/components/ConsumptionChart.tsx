@@ -16,37 +16,37 @@ interface DataPoint {
   value: number;
 }
 
-// Sample data for different time periods
-const hourData: DataPoint[] = [
-  { time: "00:00", value: 40 },
-  { time: "04:00", value: 35 },
-  { time: "08:00", value: 55 },
-  { time: "12:00", value: 65 },
-  { time: "16:00", value: 58 },
-  { time: "20:00", value: 45 },
-];
-
-const dayData: DataPoint[] = [
-  { time: "Mon", value: 320 },
-  { time: "Tue", value: 350 },
-  { time: "Wed", value: 380 },
-  { time: "Thu", value: 340 },
-  { time: "Fri", value: 360 },
-  { time: "Sat", value: 400 },
-  { time: "Sun", value: 330 },
-];
-
-const weekData: DataPoint[] = [
-  { time: "Week 1", value: 1850 },
-  { time: "Week 2", value: 1920 },
-  { time: "Week 3", value: 1780 },
-  { time: "Week 4", value: 1890 },
-];
-
-type TimeRange = "hour" | "day" | "week";
-
-export function ConsumptionChart() {
+export function ConsumptionChart({ unit }: { unit: string }) {
   const [timeRange, setTimeRange] = useState<TimeRange>("hour");
+
+  // Sample data for different time periods
+  const hourData: DataPoint[] = [
+    { time: "00:00", value: 40 },
+    { time: "04:00", value: 35 },
+    { time: "08:00", value: 55 },
+    { time: "12:00", value: 65 },
+    { time: "16:00", value: 58 },
+    { time: "20:00", value: 45 },
+  ];
+
+  const dayData: DataPoint[] = [
+    { time: "Mon", value: 320 },
+    { time: "Tue", value: 350 },
+    { time: "Wed", value: 380 },
+    { time: "Thu", value: 340 },
+    { time: "Fri", value: 360 },
+    { time: "Sat", value: 400 },
+    { time: "Sun", value: 330 },
+  ];
+
+  const weekData: DataPoint[] = [
+    { time: "Week 1", value: 1850 },
+    { time: "Week 2", value: 1920 },
+    { time: "Week 3", value: 1780 },
+    { time: "Week 4", value: 1890 },
+  ];
+
+  type TimeRange = "hour" | "day" | "week";
 
   const data = {
     hour: hourData,
@@ -103,7 +103,7 @@ export function ConsumptionChart() {
               fontSize={12}
               tickLine={false}
               axisLine={false}
-              tickFormatter={(value) => `${value}L`}
+              tickFormatter={(value) => `${value} ${unit}`}
             />
             <Tooltip
               contentStyle={{

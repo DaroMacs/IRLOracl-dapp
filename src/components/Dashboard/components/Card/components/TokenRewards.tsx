@@ -67,7 +67,7 @@ export function TokenRewards({ rewards }: TokenRewardsProps) {
               Total Tokens
             </span>
             <span className="text-emerald-400 text-lg font-semibold">
-              {totalTokens.toFixed(1)} WTR
+              {totalTokens.toFixed(1)} IoTK
             </span>
           </div>
         </div>
