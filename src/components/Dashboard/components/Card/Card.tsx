@@ -6,12 +6,18 @@ import { StatusIndicator } from "./components/StatusIndicator";
 import { TokenRewards } from "./components/TokenRewards";
 import { TransactionChart } from "./components/TransactionChart";
 
-export function Card() {
+export function Card({
+  index,
+  toggleDeviceStatus,
+}: {
+  index: number;
+  toggleDeviceStatus: (device: string) => Promise<boolean>;
+}) {
   const isConnected = true; // This should come from your actual device status
   const blockchainStatus = {
     isConnected: true,
     lastSync: "2 min ago",
-    blockNumber: 18732091,
+    blockNumber: 22998861,
   };
 
   const transactions = [
@@ -55,9 +61,9 @@ export function Card() {
         <div className="flex gap-4 items-stretch">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1605387132052-357a341cc515?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src={`/images/device${index + 1}.avif`}
             className="h-[320px] w-[320px] object-cover rounded-2xl group-hover/card:shadow-xl"
-            alt="thumbnail"
+            alt="Water Flow Monitor Device"
           />
           <div className="flex gap-4 flex-1">
             <LatestTransactions transactions={transactions} />
@@ -66,7 +72,10 @@ export function Card() {
 
           <div className="flex flex-col items-center gap-4 flex-1">
             <BlockchainStatus {...blockchainStatus} />
-            <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full w-full bg-emerald-400/10 backdrop-blur-sm">
+            <button
+              className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full w-full bg-emerald-400/10 backdrop-blur-sm"
+              onClick={() => toggleDeviceStatus(`Device${index + 1}`)}
+            >
               <span>Disconnect</span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
             </button>

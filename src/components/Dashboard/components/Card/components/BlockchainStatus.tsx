@@ -11,7 +11,7 @@ export function BlockchainStatus({
   lastSync,
   blockNumber,
 }: BlockchainStatusProps) {
-  const contractAddress = "0x1234...5678"; // This should come from your actual contract
+  const contractAddress = "0xe891...E8Bc";
 
   return (
     <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 space-y-3 w-full">
@@ -22,9 +22,9 @@ export function BlockchainStatus({
         <StatusIndicator isConnected={isConnected} />
       </div>
       <div className="text-white/80 text-base space-y-2">
-        <p className="font-medium">Connected to: Ethereum</p>
+        <p className="font-medium">Connected to: Mantle</p>
         <p>Last sync: {lastSync}</p>
-        <p>Block #{blockNumber.toLocaleString()}</p>
+        <p>Block #{blockNumber}</p>
         <div className="flex items-center gap-1">
           <span className="text-white/80 text-base">Contract:</span>
           <a

@@ -1,6 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+import {
+  getAllDevices,
+  toggleDeviceStatus,
+} from "@/lib/services/IoTDeviceOracle";
 import { cn } from "@/lib/utils";
+import { TDevice } from "@/types/TDevice";
 import { usePrivy } from "@privy-io/react-auth";
 import {
   IconArrowLeft,
@@ -137,7 +142,34 @@ export const LogoIcon = () => {
 
 // Dummy dashboard component with content
 const DashboardContent = () => {
-  const { authenticated } = usePrivy();
+  const [loading, setLoading] = useState(true);
+  const [devices, setDevices] = useState<TDevice[] | null>(null);
+  const { authenticated, user } = usePrivy();
+
+  useEffect(() => {
+    async function loadData() {
+      if (authenticated && user?.wallet?.address) {
+        try {
+          setLoading(true);
+          const [devicesData] = await Promise.all([
+            getAllDevices(),
+            toggleDeviceStatus("Device1"),
+          ]);
+
+          setDevices(devicesData);
+        } catch (error) {
+          console.error("Error loading data:", error);
+        } finally {
+          setLoading(false);
+        }
+      }
+    }
+
+    loadData();
+  }, [authenticated, user]);
+
+  console.log(devices);
+
   return (
     <div className="flex flex-1">
       <div className="flex w-full flex-1 flex-col gap-2  bg-white p-2 md:p-10 dark:border-neutral-700 dark:bg-black-100">
@@ -158,9 +190,9 @@ const DashboardContent = () => {
           Control and manage your devices from here.
         </p>
         <div className="grid grid-cols-1  gap-4">
-          {[...new Array(12)].map((i, idx) => (
-            <div key={idx} className="w-full">
-              <Card />
+          {devices?.map((device, i) => (
+            <div key={i} className="w-full">
+              <Card index={i} toggleDeviceStatus={toggleDeviceStatus} />
             </div>
           ))}
         </div>
