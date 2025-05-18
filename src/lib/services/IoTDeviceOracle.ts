@@ -41,22 +41,27 @@ export async function getAllDevices(): Promise<TDevice[]> {
 }
 
 // Function to toggle the device status
-export async function toggleDeviceStatus(device: string): Promise<boolean> {
+export async function toggleDeviceStatus(
+  device: string,
+): Promise<{ success: boolean; hash?: string }> {
   const { walletClient, address } = await getWalletClient();
 
   try {
     // Calling the contract's toggleDeviceStatus function
-    const transactionHash = await walletClient.writeContract({
+    const hash = await walletClient.writeContract({
       address: CONTRACT_ADDRESS,
       abi: CONTRACT_ABI,
-      functionName: "toggleDeviceStatus", // Ensure the function name matches the one in your contract
-      args: [device], // Pass the device name as an argument
-      account: address, // Pass the address of the sender here
+      functionName: "toggleDeviceStatus",
+      args: [device],
+      account: address,
     });
 
-    return true;
+    // Wait for transaction confirmation
+    const receipt = await publicClient.waitForTransactionReceipt({ hash });
+
+    return { success: true, hash: receipt.transactionHash };
   } catch (error) {
     console.error("Error toggling device status:", error);
-    return false; // Return false if an error occurs
+    return { success: false };
   }
 }

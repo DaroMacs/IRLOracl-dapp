@@ -1,6 +1,8 @@
 import { CardSpotlight } from "@/components/ui/CardSpotlight";
 import { getDevice } from "@/data/devices.data";
 import { TDevice } from "@/types/TDevice";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { BlockchainStatus } from "./components/BlockchainStatus";
 import { ConsumptionChart } from "./components/ConsumptionChart";
 import { LatestTransactions } from "./components/LatestTransactions";
@@ -14,9 +16,13 @@ export function Card({
   device,
 }: {
   index: number;
-  toggleDeviceStatus: (device: string) => Promise<boolean>;
+  toggleDeviceStatus: (
+    device: string,
+  ) => Promise<{ success: boolean; hash?: string }>;
   device: TDevice;
 }) {
+  const router = useRouter();
+  const [isLoading, setIsLoading] = useState(false);
   const deviceDB = getDevice(`Device${index + 1}`);
   if (!deviceDB) return null;
 
@@ -56,6 +62,21 @@ export function Card({
     },
   ];
 
+  const handleToggle = async () => {
+    try {
+      setIsLoading(true);
+      const result = await toggleDeviceStatus(`Device${index + 1}`);
+      if (result.success) {
+        router.refresh();
+        window.location.reload();
+      }
+    } catch (error) {
+      console.error("Error toggling device:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <CardSpotlight className="min-h-[400px] w-full p-6">
       <div className="text-white text-2xl relative z-20 font-sans mb-6 flex justify-between items-center">
@@ -81,10 +102,17 @@ export function Card({
           <div className="flex flex-col items-center gap-4 flex-1">
             <BlockchainStatus {...blockchainStatus} />
             <button
-              className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full w-full bg-emerald-400/10 backdrop-blur-sm"
-              onClick={() => toggleDeviceStatus(`Device${index + 1}`)}
+              className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full w-full bg-emerald-400/10 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed"
+              onClick={handleToggle}
+              disabled={isLoading}
             >
-              <span>{device.enabled ? "Disconnect" : "Connect"}</span>
+              <span>
+                {isLoading
+                  ? "Processing..."
+                  : device.enabled
+                  ? "Disconnect"
+                  : "Connect"}
+              </span>
               <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
             </button>
           </div>
