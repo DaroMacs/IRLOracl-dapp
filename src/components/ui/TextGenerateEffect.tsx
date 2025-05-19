@@ -35,12 +35,14 @@ export const TextGenerateEffect = ({
     return (
       <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
+          console.log(word);
+
           return (
             <motion.span
               key={word + idx}
               className={"dark:text-white text-black opacity-0"}
               style={{
-                ...(idx === 7 || idx === 2
+                ...(idx === 0 || idx === 3 || idx === 6
                   ? {
                       background:
                         "linear-gradient(90deg, #446dcd, #4bb6d3, #6ef2cc)",
@@ -51,7 +53,14 @@ export const TextGenerateEffect = ({
                 filter: filter ? "blur(10px)" : "none",
               }}
             >
-              {word}{" "}
+              {word === "On-Chain" ? (
+                <>
+                  <br />
+                  On-Chain
+                </>
+              ) : (
+                word
+              )}{" "}
             </motion.span>
           );
         })}
@@ -62,7 +71,7 @@ export const TextGenerateEffect = ({
   return (
     <div className={cn("font-bold", className)}>
       <div className="mt-4">
-        <div className=" dark:text-white text-black leading-snug tracking-wide">
+        <div className=" dark:text-white text-black leading-snug tracking-wide ">
           {renderWords()}
         </div>
       </div>

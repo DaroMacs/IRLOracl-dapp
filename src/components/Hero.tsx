@@ -39,11 +39,10 @@ const Hero = () => {
             >
               IRL-Oracles
             </span>
-            .
           </p>
 
           <TextGenerateEffect
-            words="Verifiable and Transparent Physical Data on the Blockchain"
+            words="Verifiable, Accessible and Transparent Physical Data On-Chain"
             className="text-center text-[40px] md:text-5xl lg:text-6xl mb-8"
           />
 
