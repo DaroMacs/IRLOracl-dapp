@@ -25,6 +25,7 @@ IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data 
 - [ESP32 Water Monitor Consumption Example](https://github.com/DaroMacs/ESP32-YF-S201): This program runs inside the ROM of the ESP32 which is connected to a flow water sensor that detects the quantity of water that flows in the device and then it is send to its local server(link above)
 
 Prototype device with LCD:
+<br />
 <img src="https://github.com/user-attachments/assets/4e19a099-a603-4a33-a5db-c66df3ec5434" alt="Prototype device with LCD" width="300" />
 
 - [ESP32 WIFI Connection](https://github.com/DaroMacs/ESP32WifiConnect): This program is to connect the ESP32 to the WIFI and send the data from the sensors via wireless.
