@@ -125,7 +125,7 @@ export const Logo = () => {
         animate={{ opacity: 1 }}
         className="font-medium whitespace-pre text-black dark:text-white"
       >
-        IRLOracles
+        IRL-Oracles
       </motion.span>
     </Link>
   );
