@@ -15,7 +15,18 @@ IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data 
 
 ## 🔗 Relevant Links
 
-- [Live Demo](https://irloracles.netlify.app)
+- [Live Demo Landing page/Dashboard](https://irloracles.netlify.app) (https://irloracles.netlify.app/dashboard)
+  Remark: In order to see the dashboard you must connect any wallet.
+
+**Landing:**
+<br />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/a5c7d418-b543-45ae-9e88-bdc7a46ad632" />
+
+**Dashboard:**
+<br />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/08e66a7b-a4ae-4ba5-a6ce-b3237b2395f5" />
+
+
 - [Smart Contracts](https://github.com/DaroMacs/IRLOracles-smart-contract)
 
 ## 🔗 IoT Integration Links
