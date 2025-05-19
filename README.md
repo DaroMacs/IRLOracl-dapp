@@ -26,7 +26,11 @@ IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data 
 
 Prototype device with LCD:
 <br />
-<img src="https://github.com/user-attachments/assets/4e19a099-a603-4a33-a5db-c66df3ec5434" alt="Prototype device with LCD" width="300" />
+<img src="https://github.com/user-attachments/assets/4e19a099-a603-4a33-a5db-c66df3ec5434" alt="Prototype device with LCD" width="250" />
+
+Flow sensor detection:
+The serial monitor shows the water flow in liters, when water stops flowing it stops counting and the when flows again it measures as seen in this video:
+https://www.loom.com/share/bf934620799d4c64af9e2f42ae458c29
 
 - [ESP32 WIFI Connection](https://github.com/DaroMacs/ESP32WifiConnect): This program is to connect the ESP32 to the WIFI and send the data from the sensors via wireless.
 
