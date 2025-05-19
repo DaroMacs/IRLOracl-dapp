@@ -21,7 +21,7 @@ export function LatestTransactions({ transactions }: LatestTransactionsProps) {
             <div className="flex-1">
               <div className="text-white/80 text-base font-medium mb-1">
                 {transaction.type === "water-usage"
-                  ? "Water Usage"
+                  ? "Data Recorded"
                   : "Token Reward"}
               </div>
               <div className="text-white/60 text-sm mb-2">
