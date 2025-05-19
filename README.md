@@ -1,6 +1,6 @@
-# IRL Oracles dApp
+# IRL Oracl dApp
 
-IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data collection and verification through IoT devices. By seamlessly bridging the physical and digital worlds, we create a decentralized network of trusted data streams that are instantly recorded on the blockchain.
+IRL-Oracl is a cutting-edge Web3 platform that revolutionizes real-world data collection and verification through IoT devices. By seamlessly bridging the physical and digital worlds, we create a decentralized network of trusted data streams that are instantly recorded on the blockchain.
 
 ## 🌟 Key Features
 
@@ -45,7 +45,7 @@ IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data 
 
 ## 🔗 Relevant Links
 
-- [Live Demo Landing page/Dashboard](https://irloracles.netlify.app) (https://irloracles.netlify.app/dashboard)
+- [Live Demo Landing page/Dashboard](https://irloracl.netlify.app) (https://irloracl.netlify.app/dashboard)
   Remark: In order to see the dashboard you must connect any wallet.
 
 **Landing:**
@@ -56,7 +56,7 @@ IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data 
 <br />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/08e66a7b-a4ae-4ba5-a6ce-b3237b2395f5" />
 
-- [Smart Contracts](https://github.com/DaroMacs/IRLOracles-smart-contract)
+- [Smart Contracts](https://github.com/DaroMacs/IRLOracl-smart-contract)
 
 ## 🔗 IoT Integration Links
 
@@ -90,8 +90,8 @@ Remark: The ESP32 can be customized to use any kind of sensors and therefore gat
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/IRLOracles-dapp.git
-cd IRLOracles-dapp
+git clone https://github.com/yourusername/IRLOracl-dapp.git
+cd IRLOracl-dapp
 ```
 
 2. Install dependencies:

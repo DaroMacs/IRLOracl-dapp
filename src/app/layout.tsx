@@ -58,7 +58,7 @@ const epilogue = Epilogue({
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "IRL-Oracles dApp",
+  title: "IRL-Oracl dApp",
   description: "Blockchain physical data dApp",
   icons: {
     icon: "/favicon.ico",

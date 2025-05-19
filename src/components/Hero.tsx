@@ -37,7 +37,7 @@ const Hero = () => {
                 color: "#446dcd",
               }}
             >
-              IRL-Oracles
+              IRL-Oracl
             </span>
           </p>
 
