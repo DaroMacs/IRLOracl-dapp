@@ -1,4 +1,4 @@
-# IRL Oracl dApp
+# IRL-Oracl dApp
 
 IRL-Oracl is a cutting-edge Web3 platform that revolutionizes real-world data collection and verification through IoT devices. By seamlessly bridging the physical and digital worlds, we create a decentralized network of trusted data streams that are instantly recorded on the blockchain.
 
