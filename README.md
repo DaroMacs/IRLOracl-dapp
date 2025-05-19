@@ -45,7 +45,8 @@ IRL-Oracl is a cutting-edge Web3 platform that revolutionizes real-world data co
 
 ## 🔗 Relevant Links
 
-- [Live Demo Landing page/Dashboard](https://irloracl.netlify.app) (https://irloracl.netlify.app/dashboard)
+- [Live Demo Landing page](https://irloracl.netlify.app)
+- [Live Demo Dashboard](https://irloracl.netlify.app/dashboard)
   Remark: In order to see the dashboard you must connect any wallet.
 
 **Landing:**
