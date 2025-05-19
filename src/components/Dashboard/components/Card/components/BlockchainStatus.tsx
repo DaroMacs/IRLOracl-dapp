@@ -22,7 +22,11 @@ export function BlockchainStatus({
         <StatusIndicator isConnected={isConnected} />
       </div>
       <div className="text-white/80 text-base space-y-2">
-        <p className="font-medium">Connected to: Mantle</p>
+        <p className="font-medium flex items-center gap-2">
+          Connected to:
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/mantle.svg" alt="Mantle Network" className="w-auto h-7" />
+        </p>
         <p>Last sync: {lastSync}</p>
         <p>Block #{blockNumber}</p>
         <div className="flex items-center gap-1">
