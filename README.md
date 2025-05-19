@@ -1,38 +1,107 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IRL Oracles dApp
 
-## Getting Started
+IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data collection and verification through IoT devices. By seamlessly bridging the physical and digital worlds, we create a decentralized network of trusted data streams that are instantly recorded on the blockchain.
 
-First, run the development server:
+## 🌟 Key Features
+
+- **Real-time Data Collection**: Seamless integration with IoT devices for instant data recording
+- **Blockchain Verification**: All data is immutably recorded on the blockchain
+- **Decentralized Marketplace**: Fair and transparent data exchange between providers and consumers
+- **Automated Rewards**: Smart contract-based compensation system for data providers
+- **Instant Access**: Quick and secure access to verified data streams
+- **Advanced Validation**: Robust data quality assurance mechanisms
+- **Energy-efficient**: Optimized protocols for sustainable data transmission
+- **User-friendly Interface**: Intuitive design for both providers and consumers
+
+## 🔗 Relevant Links
+
+- [Live Demo](https://irloracles.netlify.app)
+- [Smart Contracts](https://github.com/DaroMacs/IRLOracles-smart-contract)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+- MetaMask or compatible Web3 wallet
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/IRLOracles-dapp.git
+cd IRLOracles-dapp
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example
+```
+
+Fill in the required environment variables in `.env.example`
+
+add:
+
+```env
+NEXT_PUBLIC_PRIVY_APP_ID="1234"
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Frontend**: Next.js 14, React 18, TypeScript
+- **Styling**: Tailwind CSS, Shadcn UI
+- **Authentication**: Privy
+- **Blockchain**: Ethereum, Smart Contracts
+- **Data Visualization**: Recharts, Three.js
+- **Animation**: Framer Motion
+- **State Management**: React Hooks
 
-## Learn More
+## 📱 Features in Detail
 
-To learn more about Next.js, take a look at the following resources:
+### Data Provider Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Easy IoT device integration
+- Real-time data streaming
+- Automated reward distribution
+- Performance analytics
+- Device management dashboard
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Data Consumer Features
 
-## Deploy on Vercel
+- Instant data access
+- Data quality metrics
+- Historical data analysis
+- Custom data stream subscriptions
+- API integration options
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🔒 Security
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Smart contract audits
+- Encrypted data transmission
+- Secure wallet integration
+- Regular security updates
+- Access control mechanisms
 
-# IRLOracles
+---
