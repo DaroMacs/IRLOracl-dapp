@@ -1,6 +1,6 @@
-# IRL-Oracl dApp
+# IRL-Oracld dApp
 
-IRL-Oracl is a cutting-edge Web3 platform that revolutionizes real-world data collection and verification through IoT devices. By seamlessly bridging the physical and digital worlds, we create a decentralized network of trusted data streams that are instantly recorded on the blockchain.
+IRL-Oracld is a cutting-edge Web3 platform that revolutionizes real-world data collection and verification through IoT devices. By seamlessly bridging the physical and digital worlds, we create a decentralized network of trusted data streams that are instantly recorded on the blockchain.
 
 ## 🌟 Key Features
 
@@ -45,8 +45,8 @@ IRL-Oracl is a cutting-edge Web3 platform that revolutionizes real-world data co
 
 ## 🔗 Relevant Links
 
-- [Live Demo Landing page](https://irloracl.netlify.app)
-- [Live Demo Dashboard](https://irloracl.netlify.app/dashboard)
+- [Live Demo Landing page](https://irloracld.netlify.app)
+- [Live Demo Dashboard](https://irloracld.netlify.app/dashboard)
   Remark: In order to see the dashboard you must connect any wallet.
 
 **Landing:**
@@ -57,7 +57,7 @@ IRL-Oracl is a cutting-edge Web3 platform that revolutionizes real-world data co
 <br />
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/08e66a7b-a4ae-4ba5-a6ce-b3237b2395f5" />
 
-- [Smart Contracts](https://github.com/DaroMacs/IRLOracl-smart-contract)
+- [Smart Contracts](https://github.com/DaroMacs/IRLOracld-smart-contract)
 
 ## 🔗 IoT Integration Links
 
@@ -91,7 +91,7 @@ Remark: The ESP32 can be customized to use any kind of sensors and therefore gat
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/IRLOracl-dapp.git
+git clone https://github.com/yourusername/IRLOracld-dapp.git
 cd IRLOracl-dapp
 ```
 
