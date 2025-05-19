@@ -62,13 +62,21 @@ export function TokenRewards({ rewards }: TokenRewardsProps) {
         </div>
 
         <div className="mt-auto pt-4 border-t border-white/10">
-          <div className="flex justify-between items-center">
-            <span className="text-white/80 text-base font-medium">
-              Total Tokens
-            </span>
-            <span className="text-emerald-400 text-lg font-semibold">
-              {totalTokens.toFixed(1)} IoTK
-            </span>
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center gap-2">
+              <span className="text-white/80 text-sm font-medium">
+                Total Tokens
+              </span>
+              <span className="text-emerald-400 text-sm font-semibold">
+                {totalTokens.toFixed(1)} IoTK
+              </span>
+            </div>
+            <button
+              className="border text-xs font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-3 py-1.5 rounded-full bg-emerald-400/10 backdrop-blur-sm disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap hover:bg-emerald-400/20 transition-colors"
+              onClick={() => {}}
+            >
+              Claim
+            </button>
           </div>
         </div>
       </div>
