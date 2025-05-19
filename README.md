@@ -2,6 +2,17 @@
 
 IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data collection and verification through IoT devices. By seamlessly bridging the physical and digital worlds, we create a decentralized network of trusted data streams that are instantly recorded on the blockchain.
 
+## 🌟 Key Features
+
+- **Real-time Data Collection**: Seamless integration with IoT devices for instant data recording
+- **Blockchain Verification**: All data is immutably recorded on the blockchain
+- **Decentralized Marketplace**: Fair and transparent data exchange between providers and consumers
+- **Automated Rewards**: Smart contract-based compensation system for data providers
+- **Instant Access**: Quick and secure access to verified data streams
+- **Advanced Validation**: Robust data quality assurance mechanisms
+- **Energy-efficient**: Optimized protocols for sustainable data transmission
+- **User-friendly Interface**: Intuitive design for both providers and consumers
+
 ## 💡 Benefits and Use Cases
 
 ### Research and Development
@@ -31,17 +42,6 @@ IRL Oracles is a cutting-edge Web3 platform that revolutionizes real-world data 
 - **Resource Conservation**: Optimize resource usage through data-driven insights
 - **ESG Reporting**: Provide verified data for environmental, social, and governance reporting
 - **Sustainable Development**: Support SDG goals with reliable, real-world data
-
-## 🌟 Key Features
-
-- **Real-time Data Collection**: Seamless integration with IoT devices for instant data recording
-- **Blockchain Verification**: All data is immutably recorded on the blockchain
-- **Decentralized Marketplace**: Fair and transparent data exchange between providers and consumers
-- **Automated Rewards**: Smart contract-based compensation system for data providers
-- **Instant Access**: Quick and secure access to verified data streams
-- **Advanced Validation**: Robust data quality assurance mechanisms
-- **Energy-efficient**: Optimized protocols for sustainable data transmission
-- **User-friendly Interface**: Intuitive design for both providers and consumers
 
 ## 🔗 Relevant Links
 
