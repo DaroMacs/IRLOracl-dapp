@@ -51,7 +51,7 @@ IRL-Oracld is a cutting-edge Web3 platform that revolutionizes real-world data c
 
 **Landing:**
 <br />
-<img width="600" alt="image" src="https://github.com/user-attachments/assets/a5c7d418-b543-45ae-9e88-bdc7a46ad632" />
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/88afc738-6317-42b8-ba41-643870688bac" />
 
 **Dashboard:**
 <br />
