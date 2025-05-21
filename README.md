@@ -63,7 +63,8 @@ IRL-Oracld is a cutting-edge Web3 platform that revolutionizes real-world data c
 
 - [Local Server](https://github.com/DaroMacs/local-server-esp32): This server provides connectivity to from the IoT's devide to its IP and will be used to send the consumption or data to be recorded in the smart contract.
 
-- [ESP32 Water Monitor Consumption Example](https://github.com/DaroMacs/ESP32-YF-S201): This program runs inside the ROM of the ESP32 which is connected to a flow water sensor that detects the quantity of water that flows in the device and then it is send to its local server(link above)
+- [ESP32 Water Flow Sensor Calibration](https://github.com/DaroMacs/ESP32-YF-S201)
+- [ESP32 Water Monitor Consumption Example](https://github.com/DaroMacs/Water-consumption-YF-S201-in-ESP32): This program runs inside the ROM of the ESP32 which is connected to a flow water sensor that detects the quantity of water that flows in the device and then it is send to its local server(link above)
 
 Prototype device with LCD:
 <br />
